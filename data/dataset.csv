@@ -1,0 +1,38 @@
+CREATE DATABASE retail_store_db;
+Use retail_store_db;
+
+CREATE TABLE stores (
+store_id INT PRIMARY KEY,
+store_name VARCHAR(100)
+);
+
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY, -- Changed to primary key
+    store_id INT,
+    customer_id INT,
+    product_id INT,
+    amount DECIMAL (10,2), -- Added missing comma
+    sale_date DATE
+);
+
+
+INSERT INTO stores (store_id, store_name) VALUES
+(1, 'Tech Central'), (2, 'Fashion Hub'), (3, 'Home Essentials');
+
+
+INSERT INTO sales (sale_id, store_id, customer_id, product_id, amount, sale_date) VALUES
+(1001, 1, 501, 102, 282.17, '2023-10-07'),
+(1002, 3, 504, 104, 434.12, '2023-10-13'),
+(1003, 2, 501, 104, 410.92, '2023-10-08'),
+(1004, 3, 503, 103, 458.30, '2023-10-26'),
+(1005, 1, 503, 103, 256.51, '2023-10-31'),
+(1006, 3, 504, 101, 252.78, '2023-10-26'),
+(1007, 1, 501, 101, 48.57,  '2023-10-07'),
+(1008, 2, 503, 101, 117.95, '2023-10-09'),
+(1009, 2, 505, 102, 100.49, '2023-10-25'),
+(1010, 1, 504, 103, 167.98, '2023-10-04'),
+(1011, 1, 503, 103, 308.38, '2023-10-16'),
+(1012, 3, 501, 105, 414.68, '2023-10-24'),
+(1013, 3, 503, 102, 352.99, '2023-10-18'),
+(1014, 2, 505, 103, 198.40, '2023-10-08'),
+(1015, 2, 501, 103, 204.96, '2023-10-05');
